@@ -82,6 +82,10 @@ class ZeroEndpoints:
 
     _peer = f"{_baseURL}/peer"
     _peerDetail = f"{_baseURL}/peer/:address"
+
+    @property
+    def status(self):
+        return self._status
     
     @property
     def network(self) -> str:
