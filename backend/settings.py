@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-90=jw&#fp)^x*3nn4_xu^7al-8%tw*r_do(hrnv6z3-#m=#b^q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -134,4 +134,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ZERO_URL = os.environ.get("ZERO_URL", "localhost:9993")
 ZERO_TOKEN = os.environ.get("ZERO_TOKEN", "")

@@ -68,7 +68,7 @@ class ZeroClient(BaseClient):
 
 
 class ZeroEndpoints:
-    _baseURL = "localhost:9993"
+    _baseURL = settings.ZERO_URL
     _status = f"{_baseURL}/status"
 
     _network = f"{_baseURL}/network"
