@@ -1,4 +1,5 @@
 import os
+import json
 import base64
 import logging
 from datetime import datetime
@@ -26,15 +27,15 @@ class BaseClient:
         return response
 
     def post(self, url, data, **kwargs):
-        response = self.session.post(url, data=data, **kwargs)
+        response = self.session.post(url, data=json.dumps(data), **kwargs)
         return response
 
     def put(self, url, data, **kwargs):
-        response = self.session.put(url, data=data, **kwargs)
+        response = self.session.put(url, data=json.dumps(data), **kwargs)
         return response
 
     def patch(self, url, data, **kwargs):
-        response = self.session.patch(url, data=data, **kwargs)
+        response = self.session.patch(url, data=json.dumps(data), **kwargs)
         return response
 
     def delete(self, url, **kwargs):
