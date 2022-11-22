@@ -7,7 +7,7 @@ from apis.utils import ZeroClient, ZeroEndpoints
 
 
 class NetworkAPIView(APIView):
-    endpoint = ZeroEndpoints.network
+    endpoint = ZeroEndpoints().network
 
     def get(self, request: Request, *args, **kwargs):
         client = ZeroClient()
@@ -25,7 +25,7 @@ class NetworkAPIView(APIView):
 
 
 class NetworkDetailAPIView(APIView):
-    endpoint = ZeroEndpoints.network_detail
+    endpoint = ZeroEndpoints().network_detail
 
     def get(self, request: Request, *args, **kwargs):
         client = ZeroClient()

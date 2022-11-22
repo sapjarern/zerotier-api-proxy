@@ -7,7 +7,7 @@ from apis.utils import ZeroClient, ZeroEndpoints
 
 
 class PeerAPIView(APIView):
-    endpoint = ZeroEndpoints.peer
+    endpoint = ZeroEndpoints().peer
 
     def get(self, request: Request, *args, **kwargs):
         client = ZeroClient()
@@ -18,7 +18,7 @@ class PeerAPIView(APIView):
 
 
 class PeerDetailAPIView(APIView):
-    endpoint = ZeroEndpoints.peer_detail
+    endpoint = ZeroEndpoints().peer_detail
 
     def get(self, request: Request, *args, **kwargs):
         client = ZeroClient()
