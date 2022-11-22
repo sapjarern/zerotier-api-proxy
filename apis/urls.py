@@ -14,8 +14,12 @@ api_v1_urls = (
 
         path('controller/', controllers.ControllerAPIView.as_view(), name='controller'),
         path('controller/network/', controllers.ControllerNetworkAPIView.as_view(), name='controller-network'),
-        path('controller/network/<str:networkID>/', controllers.ControllerNetworkDetailAPIView.as_view(), name='controller-network-detail'),
-        path('controller/network/<str:networkID>/member/', controllers.ControllerNetworkMemberAPIView.as_view(), name='controller-network-member'),
+        path('controller/network/<str:networkID>/', controllers.ControllerNetworkDetailAPIView.as_view(),
+             name='controller-network-detail'),
+        path('controller/network/<str:networkID>/member/', controllers.ControllerNetworkMemberAPIView.as_view(),
+             name='controller-network-member'),
+        path('controller/network/<str:networkID>/member/<str:memberID>/',
+             controllers.ControllerNetworkMemberDetailAPIView.as_view(), name='controller-network-member-detail'),
     ],
     'api_v1')
 

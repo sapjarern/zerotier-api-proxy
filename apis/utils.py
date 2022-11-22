@@ -81,6 +81,7 @@ class ZeroEndpoints:
     _controllerNetworkCreate = f"{_baseURL}/controller/network/:controllerID"
     _controllerNetworkDetail = f"{_baseURL}/controller/network/:networkID"
     _controllerNetworkDetailMember = f"{_baseURL}/controller/network/:networkID/member"
+    _controllerNetworkDetailMemberDetail = f"{_baseURL}/controller/network/:networkID/member/:memberID"
 
     _peer = f"{_baseURL}/peer"
     _peerDetail = f"{_baseURL}/peer/:address"
@@ -116,6 +117,10 @@ class ZeroEndpoints:
     @property
     def controller_network_member(self) -> str:
         return self._controllerNetworkDetailMember
+
+    @property
+    def controller_network_member_detail(self) -> str:
+        return self._controllerNetworkDetailMemberDetail
 
     @property
     def peer(self) -> str:
