@@ -44,6 +44,7 @@ class BaseClient:
 
 class ZeroClient(BaseClient):
     headers = {
+        "Content-Type": "application/json",
         "X-ZT1-Auth": "",
     }
 
