@@ -71,6 +71,15 @@ class ControllerNetworkMemberAPIView(APIView):
 class ControllerNetworkMemberDetailAPIView(APIView):
     endpoint = ZeroEndpoints().controller_network_member_detail
 
+    def get(self, request: Request, *args, **kwargs):
+        client = ZeroClient()
+        response = client.get(self.endpoint
+                              .replace(":networkID", kwargs["networkID"])
+                              .replace(":memberID", kwargs["memberID"]), data=request.data)
+        return Response(
+            data=response.json() if response.status_code < status.HTTP_300_MULTIPLE_CHOICES else response.content,
+            status=response.status_code)
+
     def post(self, request: Request, *args, **kwargs):
         client = ZeroClient()
         response = client.post(self.endpoint
